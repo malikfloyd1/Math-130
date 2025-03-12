@@ -1,49 +1,94 @@
 /**
- * Description here.
- * @author First Last
+ * @MalikFloyd
  */
 public class Date {
-  
-  // Add JavaDoc
+
+  //If day, month, or year is out of range it will return false.
   public static boolean isValid(int year, int month, int day) {
     boolean isValid = false;
-    // Complete code
-    return isValid;
+    if(month < 1 && month < 12){
   }
+    if(day < 1 && day > 31){
+      return isValid;
+    }
+    switch(month){
+        case: 1, 3, 7, 8, 10, 12;
+        return day <= 31;
+        case: 4, 6, 9, 11;
+        return <= 30;
+        if((year % 4 == 0 && year % 100 != 0) || year % 400 == 0) {
+          return day <= 29;
+        }
+        else {
+          return day <= 28;
+        }
   
-  // Add JavaDoc
+  // Formatting given date.
   public static String toString(int year, int month, int day) {
-    String date = "";
-    // Complete code. Verify date is valid.
+    String date = "YYYY-MM-DD";
+    SimpleDateFormat simpleDateFormat = new SimpleDateFormat(date);
     return date;
   }
   
-  // Add JavaDoc
-  public static String monthString(int month) {
+  // Determining if month is in range and return int into month name.
+ public static String monthString(int month) {
     String monthString = "invalid month";
-    // Complete code
+
+    switch(month) {
+        case 1:
+            monthString = "January";
+            break;
+        case 2:
+            monthString = "February";
+            break;
+        case 3:
+            monthString = "March";
+            break;
+        case 4:
+            monthString = "April";
+            break;
+        case 5:
+            monthString = "May";
+            break;
+        case 6:
+            monthString = "June";
+            break;
+        case 7:
+            monthString = "July";
+            break;
+        case 8:
+            monthString = "August";
+            break;
+        case 9:
+            monthString = "September";
+            break;
+        case 10:
+            monthString = "October";
+            break;
+        case 11:
+            monthString = "November";
+            break;
+        case 12:
+            monthString = "December";
+            break;
+        default:
+            break;
+    }
+
     return monthString;
+}
+
   }
   
-  /**
-   * Determines if the given year is a leap year
-   * @param year the given year
-   * @return {@code true} if {@code year} is a leap year
-   */
   public static boolean isLeapYear(int year) {
     boolean leap = false;
-    // if the year is divided by 4
     if (year % 4 == 0) {
-      // if the year is century
       if (year % 100 == 0) {
-        // if year is divided by 400
-        // then it is a leap year
         if (year % 400 == 0)
           leap = true;
         else
           leap = false;
       }
-      // if the year is not century
       else
         leap = true;
     }
